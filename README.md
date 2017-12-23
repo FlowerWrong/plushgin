@@ -9,8 +9,9 @@ It uses the [plush template library](https://github.com/gobuffalo/plush).
 router.HTMLRender = plushgin.Default()
 // or
 router.HTMLRender = plushgin.New(plushgin.RenderOptions{
-	TemplateDir: "templates",
-	ContentType: "text/html; charset=utf-8",
+	TemplateDir: 		"templates",
+	ContentType: 		"text/html; charset=utf-8",
+	MaxCacheEnties: 128,
 })
 
 router.GET("/", func(c *gin.Context) {
@@ -24,4 +25,4 @@ router.GET("/", func(c *gin.Context) {
 
 ## TODO
 
-* [ ] cache
+* [ ] layout
