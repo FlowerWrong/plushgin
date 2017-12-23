@@ -15,11 +15,7 @@ router.HTMLRender = plushgin.New(plushgin.RenderOptions{
 })
 
 router.GET("/", func(c *gin.Context) {
-	c.HTML(200, "index.html", *plush.NewContextWith(map[string]interface{}{
-		"name": "value",
-		"a": 1,
-		"bool": true,
-	}))
+	c.HTML(200, "index.html", gin.H{"name": "world"})
 })
 ```
 

@@ -48,7 +48,7 @@ func Default() *Plush2Render {
 // the template by either loading it from disk or using plush's cache.
 func (p Plush2Render) Instance(name string, data interface{}) render.Render {
 	return Plush2Render{
-		Context: data.(plush.Context),
+		Context: NewContext(data.(gin.H)),
 		Options: p.Options,
 		cache:   p.cache,
 		Name:    name,
